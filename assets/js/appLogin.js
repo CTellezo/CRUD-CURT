@@ -31,7 +31,7 @@ const registrarUsuario=()=>{
             icon: 'error',
             title: 'ERROR...',
             html: 'Escribe una contraseña valida!<br> [Mayusculas,minusculas, numeros y min. 8 caracteres]',
-            footer: '<a href="https://www.youtube.com/watch?v=MoO0WF95nsM">Tutorial de como hacer un correo valido</a>'
+            footer: '<a href="https://www.youtube.com/watch?v=MoO0WF95nsM">Tutorial de como Logearte bien</a>'
           })
           return;
     }
@@ -44,4 +44,11 @@ const registrarUsuario=()=>{
           })
           return;
     }
+
+    //INSERTAR A LA BASE DE DATOS
+
+    const datos=new FormData();
+       datos.append("correo",correo);
+       datos.append("contraseña",contraseña); 
+       datos.append("nombre",nombre);
 }
