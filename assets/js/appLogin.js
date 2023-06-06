@@ -1,7 +1,7 @@
 
 
 
-const registrarUsuario=()=>{
+const registrarUsuario= async()=>{
     var correo= document.querySelector("#correo").value;
     var contraseña= document.querySelector("#Password").value;
     var nombre= document.querySelector("#Name").value;
@@ -51,4 +51,18 @@ const registrarUsuario=()=>{
        datos.append("correo",correo);
        datos.append("contraseña",contraseña); 
        datos.append("nombre",nombre);
+
+       var Respuesta=await fetch("/CRUDTR/CRUD405/assets/php/RU.php",{
+       method:'POST',
+       body:datos
+        } );
+        
+            Swal.fire({
+                icon: 'success',
+                title: 'Exito...',
+                text: 'Respuesta'+ Respuesta,
+                footer: '<a href="https://www.youtube.com/watch?v=yhi8gggIshs">Tutorial de como hacer un correo valido</a>'
+              })
+              
+    
 }

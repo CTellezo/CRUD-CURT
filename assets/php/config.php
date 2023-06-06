@@ -3,7 +3,7 @@
 $server="localhost";
 $user="root";
 $pass="";
-$bd="ejercicio";
+$bd="cecytem";
 
-$cx=mysql_connect($server,$user,$pass,$bd)
+$cx=mysqli_connect($server,$user,$pass,$bd);
 ?>
