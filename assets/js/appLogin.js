@@ -57,12 +57,24 @@ const registrarUsuario= async()=>{
        body:datos
         } );
         
-            Swal.fire({
-                icon: 'success',
-                title: 'Exito...',
-                text: 'Respuesta'+ Respuesta,
-                footer: '<a href="https://www.youtube.com/watch?v=yhi8gggIshs">Tutorial de como hacer un correo valido</a>'
-              })
-              
-    
+        var  resultado=await Respuesta.json();
+        
+    if (resultado.success==true) {
+        Swal.fire({
+            icon: 'success',
+            title: 'EXITO!',
+            text: resultado.mensaje
+          })
+          document.querySelector("#formR").reset();
+          setTimeout(()=>{
+            window.location.href="index.html";
+        },2000);
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: resultado.mensaje,
+            footer: '<a href="https://www.youtube.com/watch?v=Pj43kbnoqGE">Tutorial para asegurar tu lugar en la base de datos</a>'
+          })
+    }
 }
