@@ -12,7 +12,7 @@
 <body>
     <main class=" card p-4 w-25 m-auto mt-4">
         <div class="text-center">
-  <form>
+  <form id="FormI">
     <img class="mb-4" src="assets/icono/images.png" alt="" width="72" height="57 text-center">
     <h1 class="h3 mb-3 fw-normal">Login del Sitio</h1>
 
@@ -30,12 +30,16 @@
         <input type="checkbox" value="remember-me"> Recordar contraseña
       </label>
     </div>
-    <a href="#" class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesion</a>
+    <div class="">
+      <input type="button" class="btn btn-lg btn-primary form-control w-100 h3" onclick="LoginU()"  value="Iniciar Sesion">
+    </div>
     <a href="../CRUD405/registrarse.html" class="w-100 btn btn-lg btn-success my-3" >Registrarse</a>
     <p class="mt-5 mb-3 text-body-secondary">&copy; CUTR 2023</p>
   </form>
 </div>
 </main>
+<script src="assets/js/funciones.js"></script>
+<script src="assets/js/appLogin.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/sweetalert2.all.min.js"></script>
 </body>
